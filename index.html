@@ -21,6 +21,7 @@
       background-color: rgba(255, 255, 255, 0.85);
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
     h1 {
@@ -36,27 +37,23 @@
 
     .search-icon {
       position: absolute;
-      top: 25px;
+      top: 30px;
       right: 30px;
+      display: flex;
+      align-items: center;
       background: white;
       border-radius: 50px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      transition: 0.3s;
     }
 
     .search-icon input {
       border: none;
       outline: none;
       padding-left: 10px;
-      display: none;
       font-family: 'DM Sans', sans-serif;
-    }
-
-    .search-icon.active input {
-      display: block;
+      font-size: 16px;
+      background: transparent;
     }
 
     .cards {
@@ -116,9 +113,9 @@
     }
 
     .feature-text p {
-      font-size: 16px;
+      font-size: 18px;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     .feature-image {
@@ -143,7 +140,7 @@
 </head>
 <body>
   <header>
-    <div class="search-icon" onclick="this.classList.toggle('active')">
+    <div class="search-icon">
       🔍<input type="text" placeholder="Search help topics...">
     </div>
     <h1>SellerBuddy</h1>
@@ -173,7 +170,7 @@
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Ad Spend Analyzer</h3>
-        <p>Check SKU-wise ad spend, optimize campaigns, understand which product is overspending or performing poorly.</p>
+        <p>Track how much you're spending on each product and ad campaign. Identify unprofitable campaigns, optimize your targeting strategy, and boost your ROI with our SKU-wise analysis tool that breaks down every rupee spent into clear performance data you can act on.</p>
       </div>
       <div class="feature-image">
         <img src="https://cdn.pixabay.com/photo/2019/05/03/01/02/data-4178118_1280.jpg" alt="Ads">
@@ -182,7 +179,7 @@
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Payment Reconciliation</h3>
-        <p>Compare portal payout file with actual amounts received. Detect short payments, wrong charges, and export claim files easily.</p>
+        <p>Upload your platform's payout report and compare it with your actual bank credits. Find missing settlements, deductions you didn’t authorize, and easily download reports to raise claims. Your complete financial visibility – automated and stress-free.</p>
       </div>
       <div class="feature-image">
         <img src="https://cdn.pixabay.com/photo/2017/09/04/18/42/money-2719585_1280.jpg" alt="Payment">
@@ -191,7 +188,7 @@
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Returns & Claims</h3>
-        <p>Track returns, file claims for non-returned items, and keep records of rejected vs passed claims all in one place.</p>
+        <p>Track all return orders, identify lost or never-returned items, and maintain a clean log of claim requests raised with the portal. Save time by avoiding duplicate follow-ups and keep complete visibility of passed vs rejected claims at one place.</p>
       </div>
       <div class="feature-image">
         <img src="https://cdn.pixabay.com/photo/2020/04/02/09/14/return-4992845_1280.jpg" alt="Returns">
@@ -200,7 +197,7 @@
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Listing Solutions</h3>
-        <p>Learn how to fix blocked listings, pass QC, upload in bulk, and use A+ content features across all platforms.</p>
+        <p>Resolve any kind of listing-related issue such as blocked listings, QC failures, or grouped mismatches. Access step-by-step guides to upload listings properly, get approved faster, and even upload A+ images with brand content across platforms.</p>
       </div>
       <div class="feature-image">
         <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/list-1956132_1280.jpg" alt="Listing">
