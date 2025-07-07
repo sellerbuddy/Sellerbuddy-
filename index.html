@@ -1,54 +1,212 @@
-<style>
-  .slideshow-box {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SellerBuddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/background-1866487_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(6px);
+      color: #222;
+    }
 
-  .slideshow-box img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
+    header {
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
 
-  .slideshow-box img.active {
-    opacity: 1;
-  }
-</style>
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      margin: 10px 0;
+    }
 
-<!-- Replace only the payment feature-image section with this 👇 -->
-<div class="feature-box-flow">
-  <div class="feature-text">
-    <h3>Payment Reconciliation</h3>
-    <p>
-      Upload your platform's payout report and compare it with your actual bank credits.
-      Find missing settlements, deductions you didn’t authorize, and easily download reports
-      to raise claims. Your complete financial visibility – automated and stress-free.
-    </p>
-  </div>
-  <div class="feature-image">
-    <div class="slideshow-box">
-      <img class="slide active" src="https://www.dropbox.com/scl/fi/jprnxom9z5moh035fm7v4/istockphoto-1344928463-1024x1024.jpg?raw=1" />
-      <img class="slide" src="https://www.dropbox.com/scl/fi/2j2nvz3hfcrpeeho5uxfn/istockphoto-1434652954-1024x1024.jpg?raw=1" />
-      <img class="slide" src="https://www.dropbox.com/scl/fi/zju4pfw0cy5l4i8iht7g9/istockphoto-1399077758-1024x1024.jpg?raw=1" />
+    .subtext {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 10px 20px;
+    }
+
+    .search-icon input {
+      border: none;
+      outline: none;
+      padding-left: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      background: transparent;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
+    .card {
+      width: 240px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #f8f9fa;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .icon img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .feature-flow {
+      padding: 60px 20px;
+    }
+
+    .feature-box-flow {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .feature-box-flow:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .feature-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .feature-text h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .feature-text p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .feature-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .feature-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.85);
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="search-icon">
+      🔍<input type="text" placeholder="Search help topics...">
+    </div>
+    <h1>SellerBuddy</h1>
+    <p class="subtext">Helping Sellers Across Flipkart, Amazon, AJIO & Shopify</p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/882/882704.png" alt="Flipkart"></div>
+      <h3>Flipkart</h3>
+    </div>
+    <div class="card">
+      <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968945.png" alt="Amazon"></div>
+      <h3>Amazon</h3>
+    </div>
+    <div class="card">
+      <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/6124/6124991.png" alt="Shopify"></div>
+      <h3>Shopify</h3>
+    </div>
+    <div class="card">
+      <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="AJIO"></div>
+      <h3>AJIO</h3>
     </div>
   </div>
-</div>
 
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slideshow-box img');
+  <div class="feature-flow">
+    <div class="feature-box-flow">
+      <div class="feature-text">
+        <h3>Ad Spend Analyzer</h3>
+        <p>Track how much you're spending on each product and ad campaign. Identify unprofitable campaigns, optimize your targeting strategy, and boost your ROI with our SKU-wise analysis tool that breaks down every rupee spent into clear performance data you can act on.</p>
+      </div>
+      <div class="feature-image">
+        <img src="https://cdn.pixabay.com/photo/2019/05/03/01/02/data-4178118_1280.jpg" alt="Ads">
+      </div>
+    </div>
+    <div class="feature-box-flow">
+      <div class="feature-text">
+        <h3>Payment Reconciliation</h3>
+        <p>Upload your platform's payout report and compare it with your actual bank credits. Find missing settlements, deductions you didn’t authorize, and easily download reports to raise claims. Your complete financial visibility – automated and stress-free.</p>
+      </div>
+      <div class="feature-image">
+        <img src="https://cdn.pixabay.com/photo/2017/09/04/18/42/money-2719585_1280.jpg" alt="Payment">
+      </div>
+    </div>
+    <div class="feature-box-flow">
+      <div class="feature-text">
+        <h3>Returns & Claims</h3>
+        <p>Track all return orders, identify lost or never-returned items, and maintain a clean log of claim requests raised with the portal. Save time by avoiding duplicate follow-ups and keep complete visibility of passed vs rejected claims at one place.</p>
+      </div>
+      <div class="feature-image">
+        <img src="https://cdn.pixabay.com/photo/2020/04/02/09/14/return-4992845_1280.jpg" alt="Returns">
+      </div>
+    </div>
+    <div class="feature-box-flow">
+      <div class="feature-text">
+        <h3>Listing Solutions</h3>
+        <p>Resolve any kind of listing-related issue such as blocked listings, QC failures, or grouped mismatches. Access step-by-step guides to upload listings properly, get approved faster, and even upload A+ images with brand content across platforms.</p>
+      </div>
+      <div class="feature-image">
+        <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/list-1956132_1280.jpg" alt="Listing">
+      </div>
+    </div>
+  </div>
 
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 5000);
-</script>
+  <footer>
+    &copy; 2025 SellerBuddy. Built for Sellers, by a Seller.
+  </footer>
+</body>
+</html>
