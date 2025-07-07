@@ -5,22 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SellerBuddy</title>
   <style>
+    :root {
+      --flipkart: #e3f2fd;
+      --amazon: #fff3e0;
+      --shopify: #e8f5e9;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f9fbfc;
       text-align: center;
+      transition: background-color 1s ease-in-out;
     }
+
     h1 {
       margin-top: 40px;
       font-size: 36px;
       color: #333;
     }
+
     .subtext {
       margin-bottom: 40px;
       color: #777;
     }
+
     .cards {
       display: flex;
       justify-content: center;
@@ -28,6 +37,7 @@
       flex-wrap: wrap;
       padding: 20px;
     }
+
     .card {
       width: 220px;
       background: white;
@@ -38,15 +48,18 @@
       padding: 30px 20px;
       transition: 0.3s;
     }
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       background: #eef6ff;
     }
+
     .icon {
       font-size: 50px;
       margin-bottom: 15px;
     }
+
     footer {
       margin-top: 60px;
       padding: 20px;
@@ -55,7 +68,8 @@
     }
   </style>
 </head>
-<body>
+<body id="bg">
+
   <h1>Welcome to SellerBuddy</h1>
   <p class="subtext">One stop solution for all your e-commerce seller support</p>
 
@@ -75,5 +89,16 @@
   </div>
 
   <footer>© 2025 SellerBuddy. All rights reserved.</footer>
+
+  <script>
+    const bg = document.getElementById('bg');
+    const colors = ['var(--flipkart)', 'var(--amazon)', 'var(--shopify)'];
+    let i = 0;
+    setInterval(() => {
+      bg.style.backgroundColor = colors[i];
+      i = (i + 1) % colors.length;
+    }, 5000);
+  </script>
+
 </body>
 </html>
