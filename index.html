@@ -4,40 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SellerBuddy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --flipkart: #e3f2fd;
-      --amazon: #fff3e0;
-      --shopify: #e8f5e9;
-      --ajio: #f3e8fd;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--flipkart);
-      transition: background-color 1s ease-in-out;
+      font-family: 'DM Sans', sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/background-1866487_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(6px);
+      color: #222;
     }
 
     header {
-      padding: 20px;
-      background: rgba(255,255,255,0.9);
-      position: relative;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .subtext {
+      font-size: 18px;
+      color: #555;
     }
 
     .search-icon {
       position: absolute;
-      top: 30px;
+      top: 25px;
       right: 30px;
       background: white;
-      border-radius: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 10px 20px;
       display: flex;
       align-items: center;
-      cursor: pointer;
+      transition: 0.3s;
     }
 
     .search-icon input {
@@ -45,22 +52,11 @@
       outline: none;
       padding-left: 10px;
       display: none;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .search-icon.active input {
       display: block;
-    }
-
-    h1 {
-      margin-top: 10px;
-      font-size: 40px;
-      color: #333;
-    }
-
-    .subtext {
-      margin-bottom: 30px;
-      color: #555;
-      font-size: 18px;
     }
 
     .cards {
@@ -68,41 +64,41 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
-      padding: 20px;
+      padding: 40px;
     }
 
     .card {
-      width: 220px;
-      background: white;
+      width: 240px;
+      background: rgba(255,255,255,0.95);
       border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-decoration: none;
-      color: #111;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       padding: 30px 20px;
-      transition: 0.3s;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      background: #f5f5f5;
+      transform: scale(1.05);
+      background: #f8f9fa;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     .icon img {
-      width: 50px;
+      width: 60px;
       margin-bottom: 15px;
     }
 
     .feature-flow {
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     .feature-box-flow {
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
     }
 
     .feature-box-flow:nth-child(even) {
@@ -112,17 +108,17 @@
     .feature-text {
       flex: 1;
       min-width: 300px;
-      text-align: left;
     }
 
     .feature-text h3 {
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 10px;
     }
 
     .feature-text p {
       font-size: 16px;
-      color: #444;
+      color: #333;
+      line-height: 1.6;
     }
 
     .feature-image {
@@ -133,117 +129,87 @@
     .feature-image img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #f1f1f1;
-      color: #888;
       text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.85);
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
-<body id="bg">
-
+<body>
   <header>
-    <div class="search-icon" onclick="toggleSearch(this)">
+    <div class="search-icon" onclick="this.classList.toggle('active')">
       🔍<input type="text" placeholder="Search help topics...">
     </div>
-    <h1>Welcome to SellerBuddy</h1>
+    <h1>SellerBuddy</h1>
     <p class="subtext">Helping Sellers Across Flipkart, Amazon, AJIO & Shopify</p>
   </header>
 
   <div class="cards">
-    <a class="card" href="flipkart.html" onmouseover="changeTheme('flipkart')">
+    <div class="card">
       <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/882/882704.png" alt="Flipkart"></div>
       <h3>Flipkart</h3>
-    </a>
-    <a class="card" href="amazon.html" onmouseover="changeTheme('amazon')">
+    </div>
+    <div class="card">
       <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968945.png" alt="Amazon"></div>
       <h3>Amazon</h3>
-    </a>
-    <a class="card" href="shopify.html" onmouseover="changeTheme('shopify')">
+    </div>
+    <div class="card">
       <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/6124/6124991.png" alt="Shopify"></div>
       <h3>Shopify</h3>
-    </a>
-    <a class="card" href="ajio.html" onmouseover="changeTheme('ajio')">
+    </div>
+    <div class="card">
       <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="AJIO"></div>
       <h3>AJIO</h3>
-    </a>
+    </div>
   </div>
 
   <div class="feature-flow">
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Ad Spend Analyzer</h3>
-        <p>View SKU-wise spend, optimize ad campaigns, track impressions, clicks, and returns. Maximize ROI through smart analytics.</p>
+        <p>Check SKU-wise ad spend, optimize campaigns, understand which product is overspending or performing poorly.</p>
       </div>
       <div class="feature-image">
-        <img src="https://images.unsplash.com/photo-1585386959984-a4155222b212" alt="Ads Spend">
+        <img src="https://cdn.pixabay.com/photo/2019/05/03/01/02/data-4178118_1280.jpg" alt="Ads">
       </div>
     </div>
-
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Payment Reconciliation</h3>
-        <p>Instantly match your payouts, charges, return deductions with marketplace reports. File-wise upload with automated comparison.</p>
+        <p>Compare portal payout file with actual amounts received. Detect short payments, wrong charges, and export claim files easily.</p>
       </div>
       <div class="feature-image">
-        <img src="https://images.unsplash.com/photo-1581091870620-c84c66f169f3" alt="Reconciliation">
+        <img src="https://cdn.pixabay.com/photo/2017/09/04/18/42/money-2719585_1280.jpg" alt="Payment">
       </div>
     </div>
-
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Returns & Claims</h3>
-        <p>Track which returns caused loss, how many were not received back, claim filing window, successful vs failed claims.</p>
+        <p>Track returns, file claims for non-returned items, and keep records of rejected vs passed claims all in one place.</p>
       </div>
       <div class="feature-image">
-        <img src="https://images.unsplash.com/photo-1591019289962-53c7091e4b27" alt="Returns">
+        <img src="https://cdn.pixabay.com/photo/2020/04/02/09/14/return-4992845_1280.jpg" alt="Returns">
       </div>
     </div>
-
     <div class="feature-box-flow">
       <div class="feature-text">
         <h3>Listing Solutions</h3>
-        <p>Guidance for uploading bulk listings, resolving blocks, understanding QC fails, optimizing titles, and creating A+ content.</p>
+        <p>Learn how to fix blocked listings, pass QC, upload in bulk, and use A+ content features across all platforms.</p>
       </div>
       <div class="feature-image">
-        <img src="https://images.unsplash.com/photo-1631891340647-e34e6113f4ce" alt="Listing">
+        <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/list-1956132_1280.jpg" alt="Listing">
       </div>
     </div>
   </div>
 
-  <footer>© 2025 SellerBuddy. Built for sellers, by a seller.</footer>
-
-  <script>
-    const bg = document.getElementById('bg');
-    const themes = {
-      flipkart: { color: 'var(--flipkart)', image: '' },
-      amazon: { color: 'var(--amazon)', image: '' },
-      shopify: { color: 'var(--shopify)', image: '' },
-      ajio: { color: 'var(--ajio)', image: '' }
-    };
-
-    let i = 0;
-    const keys = Object.keys(themes);
-    setInterval(() => {
-      const theme = themes[keys[i]];
-      bg.style.backgroundColor = theme.color;
-      bg.style.backgroundImage = theme.image;
-      i = (i + 1) % keys.length;
-    }, 5000);
-
-    function changeTheme(platform) {
-      bg.style.backgroundColor = themes[platform].color;
-      bg.style.backgroundImage = themes[platform].image;
-    }
-
-    function toggleSearch(el) {
-      el.classList.toggle('active');
-    }
-  </script>
+  <footer>
+    &copy; 2025 SellerBuddy. Built for Sellers, by a Seller.
+  </footer>
 </body>
 </html>
