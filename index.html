@@ -1,24 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SellerBuddy</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    .platforms { display: flex; justify-content: center; gap: 40px; margin-top: 40px; }
-    .platform { border: 2px solid #ccc; padding: 40px 60px; border-radius: 15px; text-decoration: none; color: #333; font-size: 1.5em; background: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .platform:hover { background: #e0f7fa; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fbfc;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 36px;
+      color: #333;
+    }
+    .subtext {
+      margin-bottom: 40px;
+      color: #777;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .card {
+      width: 220px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #111;
+      padding: 30px 20px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background: #eef6ff;
+    }
+    .icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background: #f1f1f1;
+      color: #888;
+    }
   </style>
 </head>
 <body>
   <h1>Welcome to SellerBuddy</h1>
-  <p>Your all-in-one e-commerce help portal</p>
-  <div class="platforms">
-    <a href="flipkart.html" class="platform">Flipkart</a>
-    <a href="amazon.html" class="platform">Amazon</a>
-    <a href="shopify.html" class="platform">Shopify</a>
+  <p class="subtext">One stop solution for all your e-commerce seller support</p>
+
+  <div class="cards">
+    <a class="card" href="flipkart.html">
+      <div class="icon">📦</div>
+      <h3>Flipkart</h3>
+    </a>
+    <a class="card" href="amazon.html">
+      <div class="icon">🛒</div>
+      <h3>Amazon</h3>
+    </a>
+    <a class="card" href="shopify.html">
+      <div class="icon">🧾</div>
+      <h3>Shopify</h3>
+    </a>
   </div>
+
+  <footer>© 2025 SellerBuddy. All rights reserved.</footer>
 </body>
 </html>
