@@ -9,6 +9,7 @@
       --flipkart: #e3f2fd;
       --amazon: #fff3e0;
       --shopify: #e8f5e9;
+      --ajio: #f3e8fd;
     }
 
     body {
@@ -17,6 +18,11 @@
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       transition: background-color 1s ease-in-out;
+      background-color: var(--flipkart);
+      background-image: url('');
+      background-size: contain;
+      background-repeat: repeat;
+      background-position: center;
     }
 
     h1 {
@@ -27,7 +33,7 @@
 
     .subtext {
       margin-bottom: 40px;
-      color: #777;
+      color: #555;
     }
 
     .cards {
@@ -52,7 +58,6 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      background: #eef6ff;
     }
 
     .icon {
@@ -60,8 +65,15 @@
       margin-bottom: 15px;
     }
 
-    footer {
+    .info-section {
+      padding: 40px 20px;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.7);
       margin-top: 60px;
+    }
+
+    footer {
+      margin-top: 40px;
       padding: 20px;
       background: #f1f1f1;
       color: #888;
@@ -71,33 +83,55 @@
 <body id="bg">
 
   <h1>Welcome to SellerBuddy</h1>
-  <p class="subtext">One stop solution for all your e-commerce seller support</p>
+  <p class="subtext">One stop solution for Flipkart, Amazon, AJIO & Shopify sellers</p>
 
   <div class="cards">
-    <a class="card" href="flipkart.html">
+    <a class="card" href="flipkart.html" onmouseover="changeTheme('flipkart')">
       <div class="icon">📦</div>
       <h3>Flipkart</h3>
     </a>
-    <a class="card" href="amazon.html">
+    <a class="card" href="amazon.html" onmouseover="changeTheme('amazon')">
       <div class="icon">🛒</div>
       <h3>Amazon</h3>
     </a>
-    <a class="card" href="shopify.html">
+    <a class="card" href="shopify.html" onmouseover="changeTheme('shopify')">
       <div class="icon">🧾</div>
       <h3>Shopify</h3>
     </a>
+    <a class="card" href="ajio.html" onmouseover="changeTheme('ajio')">
+      <div class="icon">🛍️</div>
+      <h3>AJIO</h3>
+    </a>
   </div>
 
-  <footer>© 2025 SellerBuddy. All rights reserved.</footer>
+  <div class="info-section">
+    <p>SellerBuddy helps you resolve listing errors, track ads performance, handle returns & payments across multiple platforms. Trusted by smart sellers across India.</p>
+  </div>
+
+  <footer>© 2025 SellerBuddy. Built for sellers, by a seller.</footer>
 
   <script>
     const bg = document.getElementById('bg');
-    const colors = ['var(--flipkart)', 'var(--amazon)', 'var(--shopify)'];
+    const themes = {
+      flipkart: { color: 'var(--flipkart)', image: '' },
+      amazon: { color: 'var(--amazon)', image: '' },
+      shopify: { color: 'var(--shopify)', image: '' },
+      ajio: { color: 'var(--ajio)', image: '' }
+    };
+
     let i = 0;
+    const keys = Object.keys(themes);
     setInterval(() => {
-      bg.style.backgroundColor = colors[i];
-      i = (i + 1) % colors.length;
+      const theme = themes[keys[i]];
+      bg.style.backgroundColor = theme.color;
+      bg.style.backgroundImage = theme.image;
+      i = (i + 1) % keys.length;
     }, 5000);
+
+    function changeTheme(platform) {
+      bg.style.backgroundColor = themes[platform].color;
+      bg.style.backgroundImage = themes[platform].image;
+    }
   </script>
 
 </body>
